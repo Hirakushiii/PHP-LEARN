@@ -14,7 +14,9 @@ $nama = "Kenn";
 
 <body>
     <h1>hallo, nama saya
-        <?php echo $nama; ?>
+        <?php
+        echo $nama;
+        ?>
     </h1>
 </body>
 
