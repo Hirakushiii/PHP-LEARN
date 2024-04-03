@@ -1,4 +1,5 @@
 <?php
+// $ = FUNCTION PADA PHP
 $nama = "Kenn";
 ?>
 
