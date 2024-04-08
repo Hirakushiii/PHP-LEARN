@@ -12,7 +12,7 @@ function query($q)
 }
 
 // FUNCTION TAMBAH DATA.
-// IF IT WORKS?, DON'T TOUCH IT...!
+// IF IT WORKS?, DON'T TOUCH IT....!
 if (isset($_POST["submit"])) {
     // AMBIL DATA DARI TIAP ELEMENT YANG DI INPUT DI FORM
     $id = $_POST["id"];
