@@ -3,6 +3,11 @@ require "function.php";
 
 $saham = query("SELECT * FROM saham");
 
+// if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+//     header("Location: NEW table.php");
+//     header("Location: NEW table.php", false);
+// }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +17,7 @@ $saham = query("SELECT * FROM saham");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Document</title>
+    <title>DATA SAHAM IDX</title>
 </head>
 
 <body>
@@ -37,19 +42,22 @@ $saham = query("SELECT * FROM saham");
                         </th>
                         <td>
                             <?= $r["NAMA PERUSAHAAN"]; ?>
+                            <!--  -->
                         </td>
                         <td>
                             <?= $r["PEMILIK PERUSAHAAN"]; ?>
+                            <!--  -->
                         </td>
                         <td>
                             <?= $r["PRODUKSI PERUSAHAAN"]; ?>
+                            <!--  -->
                         </td>
                         <td>
                             <?= $r["HARGA PER/ LEMBAR"]; ?>
                         </td>
                         <td>
                             <a href="" class="btn btn-primary">GANTI</a> |
-                            <a href="" class="btn btn-danger fs-6">HAPUS</a>
+                            <a href="hapus.php?id=<?= $r["ID"]; ?>" class="btn btn-danger fs-6" method="post">HAPUS</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -106,9 +114,10 @@ $saham = query("SELECT * FROM saham");
             </div>
         </div>
     </div>
+    <!-- ALERT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
