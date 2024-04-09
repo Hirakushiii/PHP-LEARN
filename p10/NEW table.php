@@ -57,7 +57,9 @@ $saham = query("SELECT * FROM saham");
                         </td>
                         <td>
                             <a href="" class="btn btn-primary">GANTI</a> |
-                            <a href="hapus.php?id=<?= $r["ID"]; ?>" class="btn btn-danger fs-6" method="post">HAPUS</a>
+                            <a href="hapus.php?id=<?= $r["ID"]; ?>"
+                                onclick="return confirm('YAKIN INGIN MENGHAPUS PERMANEN DATA INI?\n- OKE > LANJUT\n- TIDAK > BATALKAN')"
+                                class="btn btn-danger fs-6" method="post">HAPUS</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
