@@ -21,12 +21,13 @@ if (isset($_POST["submit"])) {
     $pemilik = htmlspecialchars($_POST["pemilik"]);
     $produksi = htmlspecialchars($_POST["produk"]);
     $harga = htmlspecialchars($_POST["harga"]);
+    $qHarga = "SELECT FORMAT($harga, 0, 'id_ID') AS harga_rupiah FROM saham";
     global $connect;
 
     // QUERY MYSQL UNTUK INPUT DATA KE DATABASE
     $query = "INSERT INTO saham 
                 VALUES
-                ('$id', '$namaP','$pemilik', '$produksi', '$harga')";
+                ('$id', '$namaP','$pemilik', '$produksi', '$qharga')";
     mysqli_query($connect, $query);
     echo mysqli_affected_rows($connect);
     if (mysqli_affected_rows($connect) > 0) {
