@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    echo "
+            <script>
+                document.location.href = 'index.php';
+            </script>
+            ";
+    exit;
+}
 require "function.php";
 
 $saham = query("SELECT * FROM saham");
