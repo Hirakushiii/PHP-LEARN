@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 require "function.php";
-$jumlahDataPerHalaman = 6;
+$jumlahDataPerHalaman = 3;
 $JumlahData = count(query("SELECT * FROM saham"));
 $JumlahHalaman = ceil($JumlahData / $jumlahDataPerHalaman);
 $HalamanOn = (isset($_GET['Slide'])) ? $_GET['Slide'] : 1;
@@ -59,12 +59,27 @@ if (isset($_GET["Searching"])) {
         .sort-btn {
             cursor: pointer;
         }
+
+        .refreshes {
+            animation: flash 300ms ease-in-out;
+            transition: 300ms;
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 100;
+            }
+        }
     </style>
 </head>
 
 <body>
     <a href="config/logout.php" class="btn btn-danger position-absolute ms-2">Logout</a>
-    <a href="NEW table.php" class="btn btn-warning position-absolute refresh" style="margin-left :5.5rem;">Refresh</a>
+    <a href="" class="btn btn-warning position-absolute refresh" style="margin-left :5.5rem;">Refresh</a>
     <!-- <div class="head position-absolute">
         <a href="registrasi.php" class="btn btn-success">DAFTAR</a>
     </div> -->
@@ -143,7 +158,7 @@ if (isset($_GET["Searching"])) {
                     <th scope="col" class="text-center">Edit</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider">
+            <tbody class="table-group-divider refreshes">
                 <?php foreach ($saham as $r): ?>
                     <tr>
                         <th scope="row">
@@ -249,7 +264,7 @@ if (isset($_GET["Searching"])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-    <script src="config/refresh.js"></script>
+    <script src="config/script.js"></script>
 </body>
 
 </html>
