@@ -21,7 +21,7 @@ if (
 </head>
 
 <body>
-
+<h1>PROFIL LENGKAP MAHASISWA</h1>
     <ul>
         <li><img src="img/<?= $_GET["Gambar"]; ?>"></li>
         <li>
