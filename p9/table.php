@@ -22,12 +22,12 @@ $data = mysqli_query($connect, "SELECT * FROM saham");   //AMBIL DATA SAHAM PADA
 </head>
 
 <body>
-    <h1 class="text-center mt-3">DATA PERUSAHAAN IDX</h1>
+    <h1 class="text-center mt-3">DATA PERUSAHAAN SAHAM IDX</h1>
     <div class="container mt-5">
         <table class="table">
             <thead>
                 <tr class="text-uppercase">
-                    <th scope="col">ID</th>
+                    <th scope="col">ID PERUSAHAAN</th>
                     <th scope="col">Nama Perusahaan</th>
                     <th scope="col">Pemilik Perusahaan</th>
                     <th scope="col">Produksi Perusahaan</th>
