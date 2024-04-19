@@ -6,7 +6,8 @@ $keyword = $_GET["keyword"];
 $query = "SELECT * FROM saham
             WHERE 
             `ID` LIKE '%$keyword%' OR
-            `NAMA PERUSAHAAN` LIKE '%$keyword%'
+            `NAMA PERUSAHAAN` LIKE '%$keyword%' OR
+            `PEMILIK PERUSAHAAN` LIKE '%$keyword%'
             ";
 
 $saham = query($query);
