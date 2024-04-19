@@ -1,5 +1,5 @@
 const keyword = document.querySelector('#key-search');
-const btn_search = document.querySelector('#btn-search');
+const search_btn = document.querySelector('#btn-search');
 const table_contaier = document.querySelector('.container-table');
 
 keyword.addEventListener('input', () =>{

@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
             </script>
             ";
     } else {
-        echo "GAGAL MENAMBAHKAN DATA";
+        echo "DATA GAGAL DITAMBAHKAN!";
         echo "<br>";
     }
 }
