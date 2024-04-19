@@ -78,6 +78,8 @@ if (isset($_GET["Searching"])) {
                     </svg>
                 </button>
             </div>
+            <img src="img/load.gif" alt="loading" class="load"
+                style="width: 100px;height: 50px;display: none; mix-blend-mode:multiply;">
             <!--end col-->
         </div>
     </form>
