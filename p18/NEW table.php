@@ -79,7 +79,7 @@ if (isset($_GET["Searching"])) {
 
 <body>
     <a href="config/logout.php" class="btn btn-danger position-absolute ms-2">Logout</a>
-    <a href="" class="btn btn-warning position-absolute refresh" style="margin-left :5.5rem;">Refresh</a>
+    <a href="NEW table.php" class="btn btn-warning position-absolute refresh" style="margin-left :5.5rem;">Refresh</a>
     <!-- <div class="head position-absolute">
         <a href="registrasi.php" class="btn btn-success">DAFTAR</a>
     </div> -->
@@ -106,19 +106,23 @@ if (isset($_GET["Searching"])) {
     <?php if ($jumlahDataPerHalaman >= 6): ?>
         <nav aria-label="Page navigation example" class="mt-4" style="margin-bottom : -2rem;">
             <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
+                <?php if ($HalamanOn > 1): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?Slide=<?= $HalamanOn - 1; ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <?php for ($i = 1; $i <= $JumlahHalaman; $i++): ?>
                     <li class="page-item"><a class="page-link" href="?Slide=<?= $i; ?>"><?= $i; ?></a></li>
                 <?php endfor; ?>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+                <?php if ($HalamanOn > $JumlahHalaman): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
     <?php endif; ?>
@@ -205,19 +209,23 @@ if (isset($_GET["Searching"])) {
     <?php if ($jumlahDataPerHalaman < 6): ?>
         <nav aria-label="Page navigation example" class="mt-4" style="margin-bottom : 2rem;">
             <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" href="?Slide=<?= $i -= 1; ?>" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
+                <?php if ($HalamanOn > 1): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?Slide=<?= $HalamanOn - 1; ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <?php for ($i = 1; $i <= $jumlahDataPerHalaman; $i++): ?>
                     <li class="page-item"><a class="page-link" href="?Slide=<?= $i; ?>"><?= $i; ?></a></li>
                 <?php endfor; ?>
-                <li class="page-item">
-                    <a class="page-link" href="?Slide=<?= $i++; ?>" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+                <?php if ($HalamanOn < $JumlahHalaman): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="?Slide=<?= $HalamanOn + 1; ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
     <?php endif; ?>
